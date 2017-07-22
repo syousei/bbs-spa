@@ -1,0 +1,40 @@
+<div class="row">
+
+    <div class="col-md-4 col-md-push-8">
+    </div>
+
+    <div class="col-md-8 col-md-pull-4">
+        <div class="page-header">
+            <h1>{{topic?.title}}</h1>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>1: {{ topic?.author_name }} <small>{{topic?.created}}</small></p>
+                <p>{{topic?.body}}</p>
+            </div>
+        </div>
+
+        <div *ngFor="let comment of comments; let index = index" class="panel panel-default">
+            <div class="panel-body">
+                <p>{{index + 2}}: {{ comment?.author_name }} <small>{{comment?.created}}</small></p>
+                <p>{{comment?.body}}</p>
+            </div>
+        </div>
+
+        <div *ngIf="signedIn">
+            <h2>コメントを投稿</h2>
+            <form name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
+                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !comment.valid }">
+                    <textarea type="comment" class="form-control" name="comment" rows="4" [(ngModel)]="model.comment" #comment="ngModel" required></textarea>
+                    <div *ngIf="f.submitted && !comment.valid" class="help-block">コメントは必須です。</div>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary">コメント投稿</button>
+                    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

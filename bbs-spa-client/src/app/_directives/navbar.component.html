@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a routerLink="/" href="/" class="navbar-brand">SAMPLE</a>
+            <p *ngIf="userName" class="navbar-text signed-in-user-name"><span>{{userName}}</span>でログイン中</p>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a routerLink="/" href="/">ホーム</a></li>
+                <li *ngIf="userName"><a routerLink="/topics/create" href="/topics/create">トピック作成</a></li>
+                <li *ngIf="!userName"><a routerLink="/users/signin" href="/users/signin">ログイン</a></li>
+                <li *ngIf="!userName"><a routerLink="/users/signup" href="/users/signup">ユーザー登録</a></li>
+                <li *ngIf="userName"><a routerLink="/users/signout" href="/users/signout">ログアウト</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

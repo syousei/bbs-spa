@@ -1,0 +1,6 @@
+<div *ngFor="let comment of comments" class="panel panel-default">
+    <div class="panel-body">
+        <p>{{ comment?.author_name }} <small>{{comment?.created}}</small></p>
+        <p>{{comment?.body}}</p>
+    </div>
+</div>

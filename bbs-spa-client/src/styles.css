@@ -1,0 +1,104 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 100;
+
+  src: local('NotoSansJP-Thin.woff2') format('woff2'), local('NotoSansJP-Thin.woff') format('woff'), local('NotoSansJP-Thin.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 200;
+
+  src: local('NotoSansJP-Light.woff2') format('woff2'), local('NotoSansJP-Light.woff') format('woff'), local('NotoSansJP-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 300;
+
+  src: local('NotoSansJP-DemiLight.woff2') format('woff2'), local('NotoSansJP-DemiLight.woff') format('woff'), local('NotoSansJP-DemiLight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 400;
+
+  src: local('NotoSansJP-Regular.woff2') format('woff2'), local('NotoSansJP-Regular.woff') format('woff'), local('NotoSansJP-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 500;
+
+  src: local('NotoSansJP-Medium.woff2') format('woff2'), local('NotoSansJP-Medium.woff') format('woff'), local('NotoSansJP-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 700;
+
+  src: local('NotoSansJP-Bold.woff2') format('woff2'), local('NotoSansJP-Bold.woff') format('woff'), local('NotoSansJP-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 900;
+
+  src: local('NotoSansJP-Black.woff2') format('woff2'), local('NotoSansJP-Black.woff') format('woff'), local('NotoSansJP-Black.otf') format('opentype');
+}
+
+html, body {
+  font-family: 'Noto Sans Japanese' !important;
+}
+
+body { padding-top: 60px; }
+
+h1 { font-size: 200%; }
+
+h2 {
+  font-size: 150%;
+}
+
+.signed-in-user-name {
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-size: 75%;
+}
+
+.signed-in-user-name span {
+  font-weight: bold;
+}
+
+.panel a {
+  color: #000000;
+}
+
+.panel a:hover {
+  text-decoration: none;
+}
+
+.panel a:hover .panel-body {
+  background-color: rgb(245, 245, 245);
+}
+
+.panel-body > h2 {
+  margin-top: 0;
+}
+
+.panel-body small {
+  color: #999999;
+}
+
+.panel-body p {
+  margin-top: 5px;
+}
+

@@ -1,0 +1,23 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+
+handlers:
+- url: /.*
+  script: main.app
+- url: .*
+  static_dir: static_files/dist
+  http_headers:
+    Access-Control-Allow-Headers: Origin X-Requested-With Content-Type Accept Authorization
+    Access-Control-Allow-Origin: http://localhost:4200
+
+
+env_variables:
+  CLIENT: http://localhost:4200
+  EMAIL_SENDER: no-reply@appid.appspotmail.com
+  JWT_SECRET: secret
+  JWT_ALGORITHM: HS256
